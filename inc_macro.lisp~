@@ -1,0 +1,5 @@
+(defmacro inc (x)
+	   `(labels  ((incr (x)
+		      (+ x 1)))
+	      (incr ,x)))
+

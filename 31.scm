@@ -1,0 +1,12 @@
+(define (make-accumulator balance)
+  (define (accumulator amount)
+    (begin (set! balance (+ amount balance))
+	   balance)
+    )
+  (define (dispatch m)
+    (cond ((eq? m 'accumulator) accumulator)
+	  (else (error "Unknown request -- MAKE-ACCOUNT"
+                       m))
+	  )
+    )
+  dispatch)
